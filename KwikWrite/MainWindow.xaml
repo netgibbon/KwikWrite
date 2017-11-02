@@ -1,8 +1,9 @@
 ﻿<!--
-    Solution name: KwikWriter
+    Solution name: KwikWrite
     original Author: Michael Laws
     additional authors: N/A
     Date Created: 02/11/17
+    Last updated: 02/11/17
     -->
     
     <Window x:Class="KwikWrite.MainWindow"
@@ -14,18 +15,18 @@
         mc:Ignorable="d"
         Title="KwikWriter" Height="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenHeightKey}}" Width="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenWidthKey}}" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowState="Maximized" Background="#FFBBBBBB" WindowStyle="None">
     <Grid>
-        <!--Top to bottom-->
+        <!--Left to right-->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="8*"></ColumnDefinition>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <!--Left to right-->
+        <!--Top to bottom-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.3*"></RowDefinition>
-            <RowDefinition Height="9.5*"></RowDefinition>
-            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="0.3*"/>
         </Grid.RowDefinitions>
         
         <!--Top and bottom bars for logos, buttons and status info-->
@@ -33,11 +34,23 @@
         <Rectangle x:Name="bottomBar" Fill="Black" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3"></Rectangle>
         
         <!--Rich Text Box with Spellcheck and proper styling-->
-        <RichTextBox x:Name="textBox" Grid.Column="1" Grid.Row="1" SpellCheck.IsEnabled="True" SelectionBrush="#FF00D7B0" BorderBrush="{x:Null}" FontSize="16"/>
+        <RichTextBox x:Name="textBox" Grid.Column="1" Grid.Row="1" SpellCheck.IsEnabled="True" SelectionBrush="#FF00D7B0" BorderBrush="{x:Null}" FontSize="16" IsDocumentEnabled="True">
+            <RichTextBox.Effect>
+                <DropShadowEffect BlurRadius="12" Direction="270"/>
+            </RichTextBox.Effect>
+        </RichTextBox>
 
         <!--Top bar label-->
-        <Label Content="KwikWriter" Grid.Column="0" Grid.RowSpan="2" Grid.Row="0" Foreground="White" FontWeight="Bold" FontSize="16"></Label>
-        <Button x:Name="helpButton" Grid.Column="3" Content="?" Foreground="White" Background="Black" BorderBrush="White" FontSize="16px" Width="30px" HorizontalAlignment="Center"></Button>
-        <Button x:Name="quitButton" Grid.Column="3" Content="X" Foreground="White" Background="Black" BorderBrush="White" FontSize="16px" Width="30px" HorizontalAlignment="Right"></Button>
+        <Label Content="KwikWriter" Grid.Column="0" Grid.RowSpan="2" Grid.Row="0" Foreground="White" FontWeight="Bold" FontSize="24"></Label>
+        <!--Top bar buttons-->
+        <Button x:Name="helpButton" Grid.Column="3" Content="?" Foreground="White" Background="Black" BorderBrush="White" FontSize="16px" Width="30px" Height="30px" HorizontalAlignment="Center"></Button>
+        <Button x:Name="quitButton" Grid.Column="3" Content="X" Foreground="White" Background="Black" BorderBrush="White" FontSize="16px" Width="30px" Height="30px" HorizontalAlignment="Right"></Button>
+        
+        <!--Bottom bar timer-->
+        <Label x:Name="timeLabel" Grid.Column="3" Grid.Row="3" Foreground="White" Content="Changeme" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,-10"></Label>
+        
+        <!--Bottom bar system key notifiers-->
+        <Label x:Name="capsNotifier" Grid.Column="0" Grid.Row="3" Foreground="DarkSlateGray" Content="CAPS" FontSize="12" Margin="0,0,0,-10" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Label x:Name="numLockNotifier" Grid.Column="0" Grid.Row="3" Foreground="DarkSlateGray" Content="NUM" FontSize="12" Margin="0,0,0,-10" HorizontalAlignment="Center" VerticalAlignment="Top"/>
     </Grid>
 </Window>

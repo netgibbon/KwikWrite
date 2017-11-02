@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace KwikWrite
 {
@@ -18,10 +19,44 @@ namespace KwikWrite
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {    
+  
         public MainWindow()
         {
             InitializeComponent();
+            //Initialise a timer to do a task every 10 milliseconds
+            DispatcherTimer millisecondUpdator = new DispatcherTimer();
+            millisecondUpdator.Interval = TimeSpan.FromMilliseconds(10);
+            millisecondUpdator.Tick += timer_Tick;
+            millisecondUpdator.Start();
+
+            
+            
+            void timer_Tick(object sender, EventArgs e)
+            {
+                //Update the clock
+                timeLabel.Content = DateTime.Now.ToShortTimeString();
+
+                //see if the caps lock, num lock and scroll lock keys are pressed
+                if (Console.CapsLock)
+                {
+                    capsNotifier.Foreground = Brushes.White;
+                }
+                else
+                {
+                    capsNotifier.Foreground = Brushes.DarkSlateGray;
+                }
+
+                if (Console.NumberLock)
+                {
+                    numLockNotifier.Foreground = Brushes.White;
+                }
+                else
+                {
+                    numLockNotifier.Foreground = Brushes.DarkSlateGray;
+                }
+            }
         }
+        
     }
 }
