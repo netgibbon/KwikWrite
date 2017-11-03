@@ -1,0 +1,7 @@
+# GitIgnore file for KwikWriter
+
+#ignore the /bin folder
+/bin
+
+#ignore the obj folder
+/obj

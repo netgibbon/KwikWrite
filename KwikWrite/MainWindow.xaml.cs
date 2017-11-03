@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+    KwikWriter  Copyright (C) 2017  Michael Laws
+    This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+    This is free software, and you are welcome to redistribute it
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

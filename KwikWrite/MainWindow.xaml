@@ -1,10 +1,8 @@
 ﻿<!--
-    Solution name: KwikWrite
-    original Author: Michael Laws
-    additional authors: N/A
-    Date Created: 02/11/17
-    Last updated: 02/11/17
-    -->
+    KwikWriter  Copyright (C) 2017  Michael Laws
+    This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+    This is free software, and you are welcome to redistribute it
+-->
     
     <Window x:Class="KwikWrite.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
