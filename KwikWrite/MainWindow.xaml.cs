@@ -35,8 +35,7 @@ namespace KwikWrite
             millisecondUpdator.Interval = TimeSpan.FromMilliseconds(10);
             millisecondUpdator.Tick += timer_Tick;
             millisecondUpdator.Start();
-
-            
+          
             
             void timer_Tick(object sender, EventArgs e)
             {
@@ -62,7 +61,20 @@ namespace KwikWrite
                     numLockNotifier.Foreground = Brushes.DarkSlateGray;
                 }
             }
+
+            
         }
-        
+
+        private void quitButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void helpButton_Click(object sender, RoutedEventArgs e)
+        {
+            //"Create" the help window
+            HelpScreen helpScreen = new HelpScreen();
+            helpScreen.Show();
+        }
     }
 }

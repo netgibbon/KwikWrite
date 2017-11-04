@@ -1,0 +1,31 @@
+﻿<Window x:Class="KwikWrite.HelpScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KwikWrite"
+        mc:Ignorable="d"
+        Title="HelpScreen" BorderBrush="Black" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Effect>
+        <DropShadowEffect Direction="270" BlurRadius="10" ShadowDepth="10"/>
+    </Window.Effect>
+
+    <Grid>
+        <!--Left to right-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!--Top to bottom-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        
+        <!--Top bar box-->
+        <Rectangle Fill="Black" Grid.ColumnSpan="4"/>
+    </Grid>
+</Window>
